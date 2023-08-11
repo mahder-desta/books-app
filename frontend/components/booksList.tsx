@@ -27,7 +27,7 @@ function BooksList({}: Props) {
     queryFn: getBooks,
 
     getNextPageParam: (lastPage: BooksType, pages) => {
-      return lastPage.hasNext ? pages.length + 1 : undefined;
+      return pages.length * 10 < lastPage.total ? pages.length + 1 : undefined;
     },
   });
 
@@ -65,14 +65,11 @@ function BooksList({}: Props) {
           <div className="grid gap-[2px] grid-cols-2 sm:grid-cols-3 mt-1">
             {books.pages?.map((group: BooksType, i) => (
               <React.Fragment key={i}>
-                {group.data.map((book, index: number) => {
+                {group.books.map((book, index: number) => {
                   return (
-                    <Link
-                      key={index}
-                      href={`/books/${index}`}
-                      className="rounded border border-transparent hover:border-accent-400">
+                    <div key={index} className="rounded border border-transparent hover:border-accent-400">
                       <BookItem ref={lastBookRef} book={book} />
-                    </Link>
+                    </div>
                   );
                 })}
               </React.Fragment>
