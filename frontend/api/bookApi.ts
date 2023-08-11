@@ -1,11 +1,11 @@
 import axios from 'axios';
 
 const bookApi = axios.create({
-  baseURL: 'http://15.165.74.54:3000',
+  baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
 });
 
 export const getBooks = async ({ pageParam = 1 }) => {
-  const response = await bookApi.get(`?page=${pageParam}`);
+  const response = await bookApi.get(`/books?page=${pageParam}&pageSize=10`);
   return response.data;
 };
 export default bookApi;

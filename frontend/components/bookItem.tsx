@@ -9,11 +9,12 @@ type Props = {
 const BookItem = React.forwardRef<HTMLDivElement, Props>(({ book }: Props, ref) => {
   return (
     <div ref={ref ? ref : ''} className=" relative flex flex-col gap-1 ">
-      <div className="relative h-[200px]  overflow-hidden">
+      <div className="relative w-full aspect-square flex items-center justify-center  overflow-hidden bg-accent-200">
         <Image
           alt={book.title}
-          src={book.coverImage}
-          fill
+          src="/imagesmode.svg"
+          height={12}
+          width={12}
           quality={75}
           className="h-auto w-auto aspect-square object-cover transition-all hover:scale-105"
         />
