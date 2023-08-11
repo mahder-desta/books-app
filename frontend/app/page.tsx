@@ -3,7 +3,7 @@ import getQueryClient from '@/lib/get-query-client';
 import { dehydrate } from '@tanstack/react-query';
 import { getBooks } from '@/api/bookApi';
 import BooksList from '@/components/molecules/booksList';
-import HeaderNav from '@/components/headerNav';
+import HeaderNav from '@/components/atoms/headerNav';
 export default async function Home() {
   const queryClient = getQueryClient();
   await queryClient.prefetchQuery(['books'], getBooks);
