@@ -5,8 +5,7 @@ import getQueryClient from '@/lib/get-query-client';
 
 import PullToRefresh from 'react-simple-pull-to-refresh';
 import { getBooks } from '@/api/bookApi';
-import BookItem from './bookItem';
-import Link from 'next/link';
+import BookItem from '../atoms/bookItem';
 import BooksType from '@/types/booksType';
 
 type Props = {};

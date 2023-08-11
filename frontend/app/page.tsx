@@ -2,7 +2,7 @@ import HydrateClient from '@/lib/hydrate-client';
 import getQueryClient from '@/lib/get-query-client';
 import { dehydrate } from '@tanstack/react-query';
 import { getBooks } from '@/api/bookApi';
-import BooksList from '@/components/booksList';
+import BooksList from '@/components/molecules/booksList';
 import HeaderNav from '@/components/headerNav';
 export default async function Home() {
   const queryClient = getQueryClient();
